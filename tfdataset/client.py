@@ -21,7 +21,7 @@ from typing import List
 
 import grpc
 from kazoo.client import KazooClient
-from utils import pascal_voc_pb2, pascal_voc_pb2_grpc
+from .utils import pascal_voc_pb2, pascal_voc_pb2_grpc
 
 
 class ZooKeeper:
