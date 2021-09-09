@@ -17,8 +17,7 @@ import io
 import json
 import pandas as pd
 import tensorflow as tf
-import sys
-import utils.dataset_utils as dataset_util
+from dataset_utils import * 
 
 from PIL import Image
 from collections import namedtuple, OrderedDict
@@ -61,18 +60,18 @@ def create_tf_example(label_list, group, path):
         classes.append(class_text_to_int(label_list, row['class']))
 
     tf_example = tf.train.Example(features=tf.train.Features(feature={
-        'image/height': dataset_util.int64_feature(height),
-        'image/width': dataset_util.int64_feature(width),
-        'image/filename': dataset_util.bytes_feature(filename),
-        'image/source_id': dataset_util.bytes_feature(filename),
-        'image/encoded': dataset_util.bytes_feature(encoded_jpg),
-        'image/format': dataset_util.bytes_feature(image_format),
-        'image/object/bbox/xmin': dataset_util.float_list_feature(xmins),
-        'image/object/bbox/xmax': dataset_util.float_list_feature(xmaxs),
-        'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
-        'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
-        'image/object/class/text': dataset_util.bytes_list_feature(classes_text),
-        'image/object/class/label': dataset_util.int64_list_feature(classes),
+        'image/height': int64_feature(height),
+        'image/width': int64_feature(width),
+        'image/filename': bytes_feature(filename),
+        'image/source_id': bytes_feature(filename),
+        'image/encoded': bytes_feature(encoded_jpg),
+        'image/format': bytes_feature(image_format),
+        'image/object/bbox/xmin': float_list_feature(xmins),
+        'image/object/bbox/xmax': float_list_feature(xmaxs),
+        'image/object/bbox/ymin': float_list_feature(ymins),
+        'image/object/bbox/ymax': float_list_feature(ymaxs),
+        'image/object/class/text': bytes_list_feature(classes_text),
+        'image/object/class/label': int64_list_feature(classes),
     }))
     return tf_example
 
@@ -80,7 +79,8 @@ def create_tf_example(label_list, group, path):
 def main(args):
     # read label list
     object_name = args.object
-    path_to_object_label_list = '/home/inhand/Tu/Object_detection_API/workspace/training_glucometer/vidal/label_maps/{}.json'.format(object_name)
+    parent = os.getcwd()
+    path_to_object_label_list =  parent + '/tfdataset/label_maps/{}.json'.format(object_name)
     f = open(path_to_object_label_list)
     label_list = json.load(f)
 
