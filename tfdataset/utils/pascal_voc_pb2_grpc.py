@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import utils.pascal_voc_pb2 as pascal__voc__pb2
+import pascal_voc_pb2 as pascal__voc__pb2
 
 
 class PascalVOCLabelStub(object):
