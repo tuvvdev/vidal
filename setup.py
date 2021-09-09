@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import vidal
 
 setup(
-    name="vidal",
+    name="tfdataset",
     version=".".join(vidal.__version__),
     description="Video To Images",
     author="Sang Pil Yoo, Vo Van Tu",
@@ -17,7 +17,7 @@ setup(
                         "bs4",
                         "pandas",
                         "tensorflow"],
-    entry_points={"console_scripts": ["vidal=vidal.cutter:main"]},
+    # entry_points={"console_scripts": ["vidal=vidal.cutter:main"]},
     packages=find_packages(exclude=["docs", "test*"]),
     keywords=["video", "frames"],
     python_requires=">=3.6",
