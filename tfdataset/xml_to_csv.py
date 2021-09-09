@@ -1,8 +1,8 @@
 from bs4 import BeautifulSoup
-from imutils import paths
 import argparse
 import random
 import os
+from glob import glob
 
 
 def main(args=None):
@@ -17,7 +17,7 @@ def main(args=None):
     train_test_split = 0.80
 
     # grab all image paths then construct the training and testing split
-    imagePaths = list(paths.list_files(ING_BASE_PATH))
+    imagePaths = glob(os.path.join(ING_BASE_PATH, '*'))
     random.shuffle(imagePaths)
     i = int(len(imagePaths) * train_test_split)
     trainImagePaths = imagePaths[:i]

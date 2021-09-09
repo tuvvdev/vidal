@@ -15,13 +15,13 @@
 
 from __future__ import print_function
 
+import grpc
 import logging
+from . import pascal_voc_pb2, pascal_voc_pb2_grpc
+
 from pathlib import Path
 from typing import List
-
-import grpc
 from kazoo.client import KazooClient
-from .utils import pascal_voc_pb2, pascal_voc_pb2_grpc
 
 
 class ZooKeeper:
@@ -104,7 +104,7 @@ def run_test():
     # of the code.
     host = "local.inhandplus.com"
     port = 50050
-    with open(Path(__file__).parent / Path("ssl/star_inhandplus_com.crt"), "rb") as f:
+    with open(Path(__file__).parent / Path("star_inhandplus_com.crt"), "rb") as f:
         trusted_certs = grpc.ssl_channel_credentials(f.read())
 
     with grpc.secure_channel(f"{host}:{port},", trusted_certs) as channel:

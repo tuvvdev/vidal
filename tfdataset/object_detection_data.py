@@ -1,7 +1,7 @@
 import argparse
 
-from .utils.xml_to_csv import main as xml2csv
-from .utils.csv_to_tfrecords import main as csv2tfrecords
+from .xml_to_csv import main as xml2csv
+from .csv_to_tfrecords import main as csv2tfrecords
 
 def obj_data(args):
     if args.task == 'csv':

@@ -20,7 +20,7 @@ class ActionData:
         self.count = None
 
     def generate_data(self, filename, project_name='data', stride=1):
-        f = open(Path(__file__).parent / "label_maps/{}.json".format(self.object_name), "r")
+        f = open(Path(__file__).parent / "{}.json".format(self.object_name), "r")
         label_list = json.load(f)
         label_list = label_list.fromkeys(label_list, 0)
         self.data = np.zeros((1500, len(label_list)))

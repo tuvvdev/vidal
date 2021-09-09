@@ -1,4 +1,4 @@
-__version__ = ["1", "4", "0"]
+__version__ = ["1", "4", "6"]
 
 from .cutter import *
 from .action_recogntion_data import *

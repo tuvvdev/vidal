@@ -2,8 +2,13 @@ setup.py
 tfdataset/__init__.py
 tfdataset/action_recogntion_data.py
 tfdataset/client.py
+tfdataset/csv_to_tfrecords.py
 tfdataset/cutter.py
+tfdataset/dataset_utils.py
 tfdataset/object_detection_data.py
+tfdataset/pascal_voc_pb2.py
+tfdataset/pascal_voc_pb2_grpc.py
+tfdataset/xml_to_csv.py
 tfdataset.egg-info/PKG-INFO
 tfdataset.egg-info/SOURCES.txt
 tfdataset.egg-info/dependency_links.txt
