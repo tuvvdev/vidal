@@ -3,7 +3,7 @@ import vidal
 
 setup(
     name="tfdataset",
-    version=".".join(vidal.__version__),
+    version=".".join(tfdataset.__version__),
     description="Video To Images",
     author="Sang Pil Yoo, Vo Van Tu",
     author_email="ysp9714@gmail.com",
