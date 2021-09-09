@@ -17,7 +17,7 @@ import io
 import json
 import pandas as pd
 import tensorflow as tf
-from dataset_utils import * 
+from .dataset_utils import * 
 
 from PIL import Image
 from collections import namedtuple, OrderedDict
