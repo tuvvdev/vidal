@@ -1,0 +1,9 @@
+*.mp4
+
+.DS_Store
+.vscode
+.mypy_cache
+.python-version
+
+build
+vidal.egg-info
