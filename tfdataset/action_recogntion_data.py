@@ -1,12 +1,12 @@
 import os
 import csv
 import json
-import client
 import argparse
 import numpy as np
 
 from pathlib import Path
 from glob import glob
+from .client import *
 
 class ActionData:
     def __init__(self, args) -> None:
@@ -26,7 +26,7 @@ class ActionData:
         self.data = np.zeros((1500, len(label_list)))
         self.count = list(np.zeros((len(label_list))))
 
-        results = client.run(filename, project_name, self.object_name, stride=stride)
+        results = run(filename, project_name, self.object_name, stride=stride)
         for image in results.image:
             self.search_object_score(image)
         self.data = self.data.flatten()
