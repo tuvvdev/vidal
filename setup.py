@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-import vidal
+import tfdataset
 
 setup(
     name="tfdataset",
