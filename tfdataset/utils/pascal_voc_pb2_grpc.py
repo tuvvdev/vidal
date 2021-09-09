@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import pascal_voc_pb2 as pascal__voc__pb2
+from .pascal_voc_pb2 import * 
 
 
 class PascalVOCLabelStub(object):
@@ -16,18 +16,18 @@ class PascalVOCLabelStub(object):
         """
         self.CheckBlob = channel.unary_unary(
             "/object_detection.protos.PascalVOCLabel/CheckBlob",
-            request_serializer=pascal__voc__pb2.BlobFile.SerializeToString,
-            response_deserializer=pascal__voc__pb2.CheckfileRes.FromString,
+            request_serializer= BlobFile.SerializeToString,
+            response_deserializer=CheckfileRes.FromString,
         )
         self.PredictionBlob = channel.unary_unary(
             "/object_detection.protos.PascalVOCLabel/PredictionBlob",
-            request_serializer=pascal__voc__pb2.BlobReq.SerializeToString,
-            response_deserializer=pascal__voc__pb2.PascalVOCVideo.FromString,
+            request_serializer=BlobReq.SerializeToString,
+            response_deserializer=PascalVOCVideo.FromString,
         )
         self.PredictionFile = channel.stream_unary(
             "/object_detection.protos.PascalVOCLabel/PredictionFile",
-            request_serializer=pascal__voc__pb2.FileReq.SerializeToString,
-            response_deserializer=pascal__voc__pb2.PascalVOCVideo.FromString,
+            request_serializer=FileReq.SerializeToString,
+            response_deserializer=PascalVOCVideo.FromString,
         )
 
 
@@ -57,18 +57,18 @@ def add_PascalVOCLabelServicer_to_server(servicer, server):
     rpc_method_handlers = {
         "CheckBlob": grpc.unary_unary_rpc_method_handler(
             servicer.CheckBlob,
-            request_deserializer=pascal__voc__pb2.BlobFile.FromString,
-            response_serializer=pascal__voc__pb2.CheckfileRes.SerializeToString,
+            request_deserializer=BlobFile.FromString,
+            response_serializer=CheckfileRes.SerializeToString,
         ),
         "PredictionBlob": grpc.unary_unary_rpc_method_handler(
             servicer.PredictionBlob,
-            request_deserializer=pascal__voc__pb2.BlobReq.FromString,
-            response_serializer=pascal__voc__pb2.PascalVOCVideo.SerializeToString,
+            request_deserializer=BlobReq.FromString,
+            response_serializer=PascalVOCVideo.SerializeToString,
         ),
         "PredictionFile": grpc.stream_unary_rpc_method_handler(
             servicer.PredictionFile,
-            request_deserializer=pascal__voc__pb2.FileReq.FromString,
-            response_serializer=pascal__voc__pb2.PascalVOCVideo.SerializeToString,
+            request_deserializer=FileReq.FromString,
+            response_serializer=PascalVOCVideo.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -98,8 +98,8 @@ class PascalVOCLabel(object):
             request,
             target,
             "/object_detection.protos.PascalVOCLabel/CheckBlob",
-            pascal__voc__pb2.BlobFile.SerializeToString,
-            pascal__voc__pb2.CheckfileRes.FromString,
+            BlobFile.SerializeToString,
+            CheckfileRes.FromString,
             options,
             channel_credentials,
             insecure,
@@ -127,8 +127,8 @@ class PascalVOCLabel(object):
             request,
             target,
             "/object_detection.protos.PascalVOCLabel/PredictionBlob",
-            pascal__voc__pb2.BlobReq.SerializeToString,
-            pascal__voc__pb2.PascalVOCVideo.FromString,
+            BlobReq.SerializeToString,
+            PascalVOCVideo.FromString,
             options,
             channel_credentials,
             insecure,
@@ -156,8 +156,8 @@ class PascalVOCLabel(object):
             request_iterator,
             target,
             "/object_detection.protos.PascalVOCLabel/PredictionFile",
-            pascal__voc__pb2.FileReq.SerializeToString,
-            pascal__voc__pb2.PascalVOCVideo.FromString,
+            FileReq.SerializeToString,
+            PascalVOCVideo.FromString,
             options,
             channel_credentials,
             insecure,
