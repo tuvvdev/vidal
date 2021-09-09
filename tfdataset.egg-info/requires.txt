@@ -1,0 +1,8 @@
+opencv-python
+tqdm
+numpy
+grpc
+kazoo
+bs4
+pandas
+tensorflow

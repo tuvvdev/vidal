@@ -1,0 +1,15 @@
+Metadata-Version: 1.2
+Name: tfdataset
+Version: 1.4.0
+Summary: Video To Images
+Home-page: UNKNOWN
+Author: Sang Pil Yoo, Vo Van Tu
+Author-email: ysp9714@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: video,frames
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6

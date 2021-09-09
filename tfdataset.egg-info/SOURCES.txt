@@ -1,0 +1,12 @@
+setup.py
+tfdataset/__init__.py
+tfdataset/action_recogntion_data.py
+tfdataset/client.py
+tfdataset/cutter.py
+tfdataset/object_detection_data.py
+tfdataset.egg-info/PKG-INFO
+tfdataset.egg-info/SOURCES.txt
+tfdataset.egg-info/dependency_links.txt
+tfdataset.egg-info/not-zip-safe
+tfdataset.egg-info/requires.txt
+tfdataset.egg-info/top_level.txt

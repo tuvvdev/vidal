@@ -12,7 +12,7 @@ setup(
     install_requires=["opencv-python", 
                         "tqdm",
                         "numpy",
-                        "grpc",
+                        "grpcio",
                         "kazoo",
                         "bs4",
                         "pandas",
